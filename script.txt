@@ -1,1 +1,5 @@
-python run_classifier.py --task_name=blind --vocab_file=E:/PythonProject/BlindHelp/bert/models/chinese_L-12_H-768_A-12/vocab.txt --bert_config_file=E:/PythonProject/BlindHelp/bert/models/chinese_L-12_H-768_A-12/bert_config.json --output_dir=blind_model --do_train=true --do_eval=true --init_checkpoint=E:/PythonProject/BlindHelp/bert/models/chinese_L-12_H-768_A-12/bert_model.ckpt --max_seq_length=30 --train_batch_size=32 --learning_rate=5e-5 --num_train_epochs=3.0 --data_dir=/datasets
+# train eval
+python run_classifier.py --task_name=blind --vocab_file=models/chinese_L-12_H-768_A-12/vocab.txt --bert_config_file=models/chinese_L-12_H-768_A-12/bert_config.json --output_dir=results --do_train=true --do_eval=true --init_checkpoint=models/chinese_L-12_H-768_A-12/bert_model.ckpt --max_seq_length=30 --train_batch_size=32 --learning_rate=5e-5 --num_train_epochs=3.0 --data_dir=datasets
+
+# predict
+python run_classifier.py --task_name=blind --vocab_file=models/chinese_L-12_H-768_A-12/vocab.txt --bert_config_file=models/chinese_L-12_H-768_A-12/bert_config.json --output_dir=results --do_predict=true --init_checkpoint=models/chinese_L-12_H-768_A-12/bert_model.ckpt  --data_dir=datasets

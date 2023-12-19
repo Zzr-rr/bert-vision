@@ -209,8 +209,8 @@ class BlindProcessor(DataProcessor):
 
     def get_train_examples(self, data_dir):
         """Gets a collection of `InputExample`s for the train set."""
-        # file_path = os.path.join(data_dir, 'train_blind.txt')
-        file_path = "E:\\PythonProject\\BlindHelp\\bert\\datasets\\train_blind.txt"
+        file_path = os.path.join(data_dir, "test_blind.txt")
+        # file_path = file_path.replace('\\', '\\\\')
         f = open(file_path, 'r', encoding='utf-8')
         train_data = []
         index = 0
@@ -242,17 +242,9 @@ class BlindProcessor(DataProcessor):
 
     def get_test_examples(self, data_dir):
         """Gets a collection of `InputExample`s for prediction."""
-        # file_path = os.path.join(data_dir, 'test_csv')
-        # test_df = pd.read_csv(file_path, encoding='utf-8')
-        # test_data = []
-        # for index, test in enumerate(test_df.values):
-        #     guid = 'text-%d' % index
-        #     text_a = tokenization.convert_to_unicode(str(test[1]))
-        #     label = str(test[0])
-        #     test_data.append(InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
-        # return test_data
-        # file_path = os.path.join(data_dir, 'test_blind.txt')
-        file_path = "E:\\PythonProject\\BlindHelp\\bert\\datasets\\test_blind.txt"
+        file_path = os.path.join(data_dir, "test_blind.txt")
+        # file_path = file_path[1:].replace('\\', '\\\\')
+        print(file_path)
         f = open(file_path, 'r', encoding='utf-8')
         test_data = []
         index = 0
