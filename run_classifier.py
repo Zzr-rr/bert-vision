@@ -209,8 +209,7 @@ class BlindProcessor(DataProcessor):
 
     def get_train_examples(self, data_dir):
         """Gets a collection of `InputExample`s for the train set."""
-        file_path = os.path.join(data_dir, "test_blind.txt")
-        # file_path = file_path.replace('\\', '\\\\')
+        file_path = os.path.join(data_dir, "train_blind.txt")
         f = open(file_path, 'r', encoding='utf-8')
         train_data = []
         index = 0
@@ -226,8 +225,7 @@ class BlindProcessor(DataProcessor):
 
     def get_dev_examples(self, data_dir):
         """Gets a collection of `InputExample`s for the dev set."""
-        # file_path = os.path.join(data_dir, 'test_blind.txt')
-        file_path = "E:\\PythonProject\\BlindHelp\\bert\\datasets\\test_blind.txt"
+        file_path = os.path.join(data_dir, 'test_blind.txt')
         f = open(file_path, 'r', encoding='utf-8')
         dev_data = []
         index = 0
@@ -243,7 +241,6 @@ class BlindProcessor(DataProcessor):
     def get_test_examples(self, data_dir):
         """Gets a collection of `InputExample`s for prediction."""
         file_path = os.path.join(data_dir, "test_blind.txt")
-        # file_path = file_path[1:].replace('\\', '\\\\')
         print(file_path)
         f = open(file_path, 'r', encoding='utf-8')
         test_data = []
